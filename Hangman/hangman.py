@@ -10,7 +10,7 @@ import readline
 from sys import argv, exit
 from os import name, system
 
-version = "20171109f"
+version = "20171109a"
 clear = "cls" if name == "nt" else "clear;clear"
 
 usage = """
