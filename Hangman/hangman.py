@@ -73,7 +73,7 @@ def pick():
 			theme = i.split("=")[1]
 	try:
 		url = "https://raw.githubusercontent.com/victorazzam/stash/master/Hangman/%s.txt" % theme
-		words = urllib2.urlopen(url).read().split()
+		words = urllib2.urlopen(url).read().split("\n")
 		return random.choice(words)
 	except (urllib2.URLError, urllib2.HTTPError):
 		return random.choice(planB[theme])
