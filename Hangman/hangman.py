@@ -116,7 +116,7 @@ def main():
 			choice = raw_input("\n Choice: ").lower().strip()
 			if choice in guesses + [""]:
 				continue
-			if choice in (word, filter(str.isalnum, word)):
+			if choice in (word.lower(), filter(str.isalnum, word.lower())):
 				winlose = 1
 				break
 			if len(choice) == len(word):
