@@ -56,10 +56,10 @@ figs = """
  ──┴──""".split(":")
 
 planB = {
-		"english": ('Awkward', 'Bagpipes', 'Banjo', 'Bungler', 'Croquet', 'Crypt', 'Dwarves', 'Fervid', 'Fishhook', 'Fjord', 'Gazebo', 'Gypsy', 'Haiku', 'Haphazard', 'Hyphen', 'Ivory', 'Jazzy', 'Jiffy', 'Jinx', 'Jukebox', 'Kayak', 'Kiosk', 'Klutz', 'Memento', 'Mystify', 'Numbskull', 'Ostracize', 'Oxygen', 'Pajama', 'Phlegm', 'Pixel', 'Polka', 'Quad', 'Quip', 'Rhythmic', 'Rogue', 'Sphinx', 'Squawk', 'Swivel', 'Toady', 'Twelfth', 'Unzip', 'Waxy', 'Wildebeest', 'Yacht', 'Zealous', 'Zigzag', 'Zippy', 'Zombie'),
-		"movies": ('Star Wars: Episode VII - The Force Awakens', 'Avatar', 'Titanic', 'Jurassic World', "Marvel's The Avengers", 'The Dark Knight', 'Rogue One: A Star Wars Story', 'Beauty and the Beast', 'Finding Dory', 'Star Wars: Episode I - The Phantom Menace', 'Star Wars: Episode IV - A New Hope', 'Avengers: Age of Ultron', 'The Dark Knight Rises', 'Shrek 2', 'E. T. The Extra-Terrestrial', 'The Hunger Games: Catching Fire', "Pirates of the Caribbean: Dead Man's Chest", 'The Lion King', 'Toy Story 3', 'Wonder Woman', 'Iron Man 3', 'Captain America: Civil War', 'The Hunger Games', 'Spider-Man', 'Jurassic Park', 'Transformers: Revenge of the Fallen', 'Frozen', 'Guardians of the Galaxy Vol. 2', 'Harry Potter and the Deathly Hallows, Part 2', 'Finding Nemo', 'Star Wars: Episode III - Revenge of the Sith', 'The Lord of the Rings: The Return of the King', 'Spider-Man 2', 'The Passion of the Christ', 'The Secret Life of Pets', 'Despicable Me 2', 'The Jungle Book', 'Deadpool', 'Inside Out', 'Furious 7', 'Transformers: Dark of the Moon', 'American Sniper', 'The Lord of the Rings: The Two Towers', 'Zootopia', 'The Hunger Games: Mockingjay - Part 1', 'Spider-Man 3', 'Minions', 'Alice in Wonderland', 'Spider-Man: Homecoming', 'Guardians of the Galaxy'),
-		"passwords": ('123456', 'password', '12345678', 'qwerty', '123456789', '12345', '1234', '111111', '1234567', 'dragon', '123123', 'baseball', 'abc123', 'football', 'monkey', 'letmein', '696969', 'shadow', 'master', '666666', 'qwertyuiop', '123321', 'mustang', '1234567890', 'michael', '654321', 'pussy', 'superman', '1qaz2wsx', '7777777', 'fuckyou', '121212', '000000', 'qazwsx', '123qwe', 'killer', 'trustno1', 'jordan', 'jennifer', 'zxcvbnm', 'asdfgh', 'hunter', 'buster', 'soccer', 'harley', 'batman', 'andrew', 'tigger', 'sunshine', 'iloveyou'),
-		}
+	"english": ('Awkward', 'Bagpipes', 'Banjo', 'Bungler', 'Croquet', 'Crypt', 'Dwarves', 'Fervid', 'Fishhook', 'Fjord', 'Gazebo', 'Gypsy', 'Haiku', 'Haphazard', 'Hyphen', 'Ivory', 'Jazzy', 'Jiffy', 'Jinx', 'Jukebox', 'Kayak', 'Kiosk', 'Klutz', 'Memento', 'Mystify', 'Numbskull', 'Ostracize', 'Oxygen', 'Pajama', 'Phlegm', 'Pixel', 'Polka', 'Quad', 'Quip', 'Rhythmic', 'Rogue', 'Sphinx', 'Squawk', 'Swivel', 'Toady', 'Twelfth', 'Unzip', 'Waxy', 'Wildebeest', 'Yacht', 'Zealous', 'Zigzag', 'Zippy', 'Zombie'),
+	"movies": ('Star Wars: Episode VII - The Force Awakens', 'Avatar', 'Titanic', 'Jurassic World', "Marvel's The Avengers", 'The Dark Knight', 'Rogue One: A Star Wars Story', 'Beauty and the Beast', 'Finding Dory', 'Star Wars: Episode I - The Phantom Menace', 'Star Wars: Episode IV - A New Hope', 'Avengers: Age of Ultron', 'The Dark Knight Rises', 'Shrek 2', 'E. T. The Extra-Terrestrial', 'The Hunger Games: Catching Fire', "Pirates of the Caribbean: Dead Man's Chest", 'The Lion King', 'Toy Story 3', 'Wonder Woman', 'Iron Man 3', 'Captain America: Civil War', 'The Hunger Games', 'Spider-Man', 'Jurassic Park', 'Transformers: Revenge of the Fallen', 'Frozen', 'Guardians of the Galaxy Vol. 2', 'Harry Potter and the Deathly Hallows, Part 2', 'Finding Nemo', 'Star Wars: Episode III - Revenge of the Sith', 'The Lord of the Rings: The Return of the King', 'Spider-Man 2', 'The Passion of the Christ', 'The Secret Life of Pets', 'Despicable Me 2', 'The Jungle Book', 'Deadpool', 'Inside Out', 'Furious 7', 'Transformers: Dark of the Moon', 'American Sniper', 'The Lord of the Rings: The Two Towers', 'Zootopia', 'The Hunger Games: Mockingjay - Part 1', 'Spider-Man 3', 'Minions', 'Alice in Wonderland', 'Spider-Man: Homecoming', 'Guardians of the Galaxy'),
+	"passwords": ('123456', 'password', '12345678', 'qwerty', '123456789', '12345', '1234', '111111', '1234567', 'dragon', '123123', 'baseball', 'abc123', 'football', 'monkey', 'letmein', '696969', 'shadow', 'master', '666666', 'qwertyuiop', '123321', 'mustang', '1234567890', 'michael', '654321', 'pussy', 'superman', '1qaz2wsx', '7777777', 'fuckyou', '121212', '000000', 'qazwsx', '123qwe', 'killer', 'trustno1', 'jordan', 'jennifer', 'zxcvbnm', 'asdfgh', 'hunter', 'buster', 'soccer', 'harley', 'batman', 'andrew', 'tigger', 'sunshine', 'iloveyou'),
+}
 
 def pick():
 	global mode
@@ -79,11 +79,8 @@ def pick():
 	except (urllib2.URLError, urllib2.HTTPError):
 		return random.choice(planB[theme])
 
-def die(word):
-	return "%s\n%s\n\n Hangman died, what a shame!\n Correct word: %s\n" % (logo, figs[-1], word)
-
-def win():
-	return """%s
+def end(win, word):
+	if win: return """%s
 
  \033[96m┌──────────────────┐
  │ Congratulations! │
@@ -94,6 +91,7 @@ def win():
          /‾‾\\
         /    \\\033[0m
 """ % logo
+	return "%s\n%s\n\n Hangman died, what a shame!\n Correct word: %s\n" % (logo, figs[-1], word)
 
 def main():
 	again = "yes"
@@ -142,14 +140,26 @@ def main():
 			guesses.append(choice)
 			error = ""
 		system(clear)
-		print win() if winlose else die(word)
+		print end(winlose, word)
 		again = raw_input(" Play again? ").lower().strip()
 	print "\n Thanks for playing hangman!\n"
+
+def update():
+	try:
+		url = "https://raw.githubusercontent.com/victorazzam/stash/master/Hangman/hangman.py"
+		tmp = urllib2.urlopen(url).read().split('version = "')[1].split('"')[0]
+	except (urllib2.URLError, urllib2.HTTPError, KeyboardInterrupt, EOFError):
+		pass
+	if tmp != version:
+		print "\nA new version of Hangman is available! Find it at:\n" + \
+		"https://github.com/victorazzam/stash/tree/master/Hangman\n"
+		raw_input("Press enter to start playing...")
 
 if __name__ == '__main__':
 	try:
 		if "-h" in argv or "--help" in argv:
 			exit(usage)
+		update()
 		exit(main())
 	except (KeyboardInterrupt, EOFError):
 		exit("")
