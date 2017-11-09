@@ -150,5 +150,5 @@ if __name__ == '__main__':
 		if "-h" in argv or "--help" in argv:
 			exit(usage)
 		exit(main())
-	except KeyboardInterrupt:
+	except (KeyboardInterrupt, EOFError):
 		exit("")
