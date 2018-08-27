@@ -7,5 +7,8 @@ Various documents, games and not project-worthy scripts.
 * Quick & dirty scripts
 * Your passwords lol
 
+### Scripts
+Find more stuff at https://gist.github.com/victorazzam
+
 ### License
 MIT
