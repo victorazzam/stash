@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os, shutil, random
 from sys import argv, exit
 
