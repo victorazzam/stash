@@ -1,0 +1,2 @@
+$ sort odd1out.txt | uniq -u
+ZD2018{6d1085f50659dd34c57a87afeb2a026ed26693768b3ca6685faeff58ea270dfe}

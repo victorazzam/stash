@@ -1,0 +1,25 @@
+
+SOLUTION 1
+==========
+
+$ grep ZD2018 *
+ZeroDays7235:ZD2018{I_am_very_good_at_finding_things}
+
+
+SOLUTION 2
+==========
+
+All files seem to be the same size, 325 bytes, so first we verify that.
+
+$ wc -c * | sort | awk '{print $1}' | uniq -u
+64
+3249739
+
+Apparently there is one that's different in size with only 64 bytes.
+
+$ wc -c * | sort | uniq -u | grep 64 | head -1
+      64 ZeroDays7235
+
+Lo and behold, the file ZeroDays7235 contains the flag!
+
+ZD2018{I_am_very_good_at_finding_things}
