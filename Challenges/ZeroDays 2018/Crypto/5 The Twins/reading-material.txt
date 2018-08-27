@@ -1,0 +1,6 @@
+
+https://github.com/hgarrereyn/Th3g3ntl3man-CTF-Writeups/tree/master/2017/UIUCTF/problems/Cryptography/EULA
+
+https://ehsandev.com/pico2014/cryptography/rsa.html
+
+https://0xd13a.github.io/ctfs/alexctf2017/poor-rsa

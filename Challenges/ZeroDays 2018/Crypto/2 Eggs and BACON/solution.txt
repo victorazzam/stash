@@ -1,0 +1,10 @@
+
+Go to http://rumkin.com/tools/cipher/baconian.php
+
+Choose "Decrypt" from the dropdown menu. 
+
+AAAABAAAAAAAABAABBBAABBAB
+BAABBAAAAABAABABAABBAABAABAABA
+AABBABAAABAABAAAAAAABAABB
+
+Flag: ZD2018{BACON TASTES GREAT}
