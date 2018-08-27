@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://challs.zerodays.events/bomb/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title>X-rayed Bomb</title>
+    <style></style></head>
+
+    <body>To decode the bomb you need to match the X-rayed pics on the left with the correct function on the right.<br>
+      You need to key in the correct function order that correspond to images 1,2,3,4 to decode the bomb.  <br>
+      Submit the correct answer sequence (i.e. 'ZD2018{ABCD}') .
+            <table cellpadding="15px" align="center">
+                <tbody><tr><th>
+                    </th><td width="10%"></td>
+                    <td width="35%"></td>
+                    <td width="1%"></td>
+                    <td width="50%"></td>
+                
+                </tr><tr>
+                    <td><h1>1)</h1></td>
+                    <td align="center">
+                        <img src="./X-rayed Bomb_files/func1.png">
+                    </td>
+                    <td></td>
+                    <td><h1>A)</h1>
+                        <pre>        int modulo(int a, int b)
+        {
+            return b % a;
+        }
+
+                        </pre>
+                    </td>
+                </tr>
+		        <tr>
+                    <td><h1>2)</h1></td>
+		            <td align="center">
+                        <img src="./X-rayed Bomb_files/func2.png">
+		            </td><td></td>
+		            <td><h1>B)</h1>
+			        <pre>        int loop(int a)
+        {
+            while (a &gt;= 0) {
+                a--;
+            }
+            return a;
+        }
+			        </pre>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td><h1>3)</h1></td>
+		            <td align="center">
+                        <img src="./X-rayed Bomb_files/func3.png">
+		            </td>
+		            <td>
+		            </td>
+		            <td><h1>C)</h1>
+			        <pre>        int control(int a, int b)
+        {
+            if (a &gt; b)
+                return b;
+            else
+                return a;
+
+        }
+			        </pre>
+		            </td>
+		        </tr>
+		        <tr>
+                    <td><h1>4)</h1></td>
+		            <td align="center">
+                        <img src="./X-rayed Bomb_files/func4.png">
+		            </td>
+		            <td>
+		            </td><td><h1>D)</h1>
+			        <pre>        int for_loop(int a, int b, int c)
+        {
+            int i;
+
+            for(i = 0; i &lt; b; i++)
+                 a = c + i;
+            return a;
+        }
+
+			        </pre>
+		            </td>
+		        </tr>
+
+            </tbody></table>
+
+    
+
+</body></html>

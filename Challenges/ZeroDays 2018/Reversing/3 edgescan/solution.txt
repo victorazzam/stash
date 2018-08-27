@@ -1,0 +1,23 @@
+The clues are important here. The key is read from stdin and is 12 characters long. Since the flag is XORed with the key and we know it starts with ZD2018{ let's brute force (not the whole string but enough to reveal most of it). We'll make a wild assumption that the key only contains alphanumerics.
+
+import os
+key = ""
+flag_part = "ZD2018{"
+
+while len(key) < len(flag_part):
+    for i in filter(str.isalnum, map(chr, range(256))):
+        cmd = 'echo -n "{}{}" | ./edgescan'.format(key, i)
+        out = os.popen(cmd).read()
+        if out[len(key)] == flag_part[len(key)]:
+            key += i
+            break
+
+print "Key = {:?<12}".format(key)[:18]
+print os.popen('echo -n "{}" | ./edgescan'.format(key)).read().strip()
+
+The output key is missing the last 5 characters, we need to guess those. The first words in the brackets kind of look like "Reverse Engineering" something something. Appending "Reverse" to flag_part outputs the correct key and flag.
+
+Key = SponsorsRock
+ZD2018{Reverse_Engineering_Is_Fun_But_Not_Always_Easy_To_Learn}
+
+PS: There's a much easier solution! Check the screenshot.

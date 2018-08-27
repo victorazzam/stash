@@ -1,0 +1,23 @@
+Opening it up in gdb and disassembling main shows some raw values being MOVed to different offsets in the stack. Let's see if these values mean anything.
+
+import struct
+
+a = 0x61636b7734726473
+b = 0x7573745f47305f42
+c = 0x7264735f77655f6d
+d = 0x676f5f666f727761
+e = 0x696d65735f746f5f
+f = 0x6f6d6574
+g = 0x53
+
+data = ''
+for i in (a, b, c, d, e, f, g):
+    data += struct.pack("I", int(hex(i)[-8:], 16)).decode("utf-8")
+    if len(hex(i)) > 15:
+        data += struct.pack("I", int(hex(i)[-16:-8], 16)).decode("utf-8")
+
+print(data)
+
+This outputs "sdr4wkcaB_0G_tsum_ew_sdrawrof_og_ot_semitemoS" which, when reversed, turns out to be the correct password.
+
+ZD2018{Sometimes_to_go_forwards_we_must_G0_Backw4rds}
