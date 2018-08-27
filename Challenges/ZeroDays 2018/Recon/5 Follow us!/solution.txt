@@ -1,0 +1,35 @@
+
+Write-up by: Rob Geraghty
+
+All the pictures and locations from the clues are places around Dublin.
+
+Hint: Did you follow us on our tour of THE CAPITAL? #ZeroDaysCTF hmm, keep in mind
+
+DATE	TYPE			LOCATION		INFORMATION
+----	----			--------		-----------
+16/12	GPS coordinates		Sitric pl
+17/12	Openstreemap		Annamore rd
+19/12 	Openstreetcam.org	North circular rd	Could be mill lane either
+19/12	Street view		Berkerley rd		Could be Kinana studios
+20/12	Street view		Russell St
+27/12 	Image in a bar 		Annesly house		Google images reverse search 
+02/01 	Image of Arya/Jon	Richmond rd		Hidden location in EXIF metadata
+10/01	Street view		Orchard ln		On sign in photo
+12/01 	Image with QR in it	Bayview ave		Scanned QR
+24/01 	Street view		Aldborough park		Could be Strand House
+07/02	picture of a red cow	Red cow roundabout	Just taking a guess
+05/03 	Pic of RCOS		York street		Could be RCOS inseat
+06/03	Pic of the cobblestone	Red cow ln		Could be Smithfield/Cobblestone
+21/03 	GPS coordinates		Integrity360		Maps lookup
+22/03 	Street view		Cabra rd		I know this place
+10/04	House for sale		Norfolk rd		Could be Phibsborough
+10/04	GPS coordinates		EdgeScan		Maps lookup
+14/04	Pic of Dalymount	Dalymount		I know this place
+
+Keeping the clue in mind, let's combine the first letter of all the locations.
+
+SANBRAROBARYRICNED
+
+First 3 letters of all the kids' names in GoT and 'NED' for Ned Stark.
+
+ZD2018{sanbrarobaryricned}
