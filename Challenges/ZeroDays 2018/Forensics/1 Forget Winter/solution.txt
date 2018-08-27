@@ -1,0 +1,3 @@
+ffmpeg -i ForgetWinter.3gp %d.png
+
+Frame 308.png has the flag ZD2018{TyrionIsComing}

@@ -1,0 +1,10 @@
+
+The PNG header is all wrong, but seeing the ^ (caret) made me think of XOR.
+
+Xoring the first "row" of bytes (16) with a real PNG header returns CONQUESTCONQUEST.
+
+Seems legit, so let's repeatedly XOR the whole file with CONQUEST and see what's up.
+
+And what do you know... out comes a proper PNG file, flag exposed in plaintext.
+
+ZD2018{shadowbinder}
