@@ -1,0 +1,26 @@
+
+Opening the image Broken_Aztec.png results in an error.
+
+In a hex editor it's easy to spot that bytes 5 to 9 are incorrect for PNGs headers.
+
+Changing the values from 0x73526F636B to 0x0D0A1A0A00 still caused an error.
+
+Reading up about how PNGs are constructed, I figured I had to fix the IHDR's CRC value.
+
+So I wrote a script (fixpng.py) to correct the CRC of the IHDR and all IDAT chunks.
+
+Finally the image could open properly in an image viewer.
+
+Weirdly enough it was just a 1280x16 black image. At this point I got a hint – resize!
+
+So I change the height of the image from the IHDR chunk and set it to 720... better!
+
+Now after fixing the CRC again to "save changes" the real image was revealed.
+
+The guy's sunglasses had an Aztec code, similar-looking to a QR code.
+
+I used Photoshop to enhance the Aztec code, ended up doing it the long way.
+
+Finally, submitting the result to an online barcode reader returned the flag.
+
+ZD2017{S0_Many_4nnoy1ng_P4r7s}

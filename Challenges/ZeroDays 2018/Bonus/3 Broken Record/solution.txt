@@ -1,0 +1,35 @@
+
+A quick run of binwalk shows that the image contains some archives.
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PNG image, 1200 x 701, 8-bit/color RGB, non-interlaced
+78            0x4E            Zlib compressed data, best compression
+545302        0x85216         Zip archive data, at least v2.0 to extract, compressed size: 71, uncompressed size: 20000, name: 35b36b28916d38b34abddf832e286126
+545435        0x8529B         Zip archive data, at least v2.0 to extract, compressed size: 73, uncompressed size: 20000, name: 36347412c7d30ae6fde3742bbc4f21b9
+545570        0x85322         Zip archive data, at least v2.0 to extract, compressed size: 69, uncompressed size: 20000, name: 44b7ed6c8297b6f269c8b872b0fd6266
+545701        0x853A5         Zip archive data, at least v2.0 to extract, compressed size: 14, uncompressed size: 1324, name: 799904b20f1174f01c0d2dd87c57e097
+545777        0x853F1         Zip archive data, at least v2.0 to extract, compressed size: 79, uncompressed size: 20000, name: 7e98b8a17c0aad30ba64d47b74e2a6c1
+545918        0x8547E         Zip archive data, at least v2.0 to extract, compressed size: 125, uncompressed size: 20000, name: 865c0c0b4ab0e063e5caa3387c1a8741
+546105        0x85539         Zip archive data, at least v2.0 to extract, compressed size: 76, uncompressed size: 20000, name: 9e3669d19b675bd57058fd4664205d2a
+546243        0x855C3         Zip archive data, at least v2.0 to extract, compressed size: 73, uncompressed size: 20000, name: b7718be8276e58d7c69992b2351b8d27
+546378        0x8564A         Zip archive data, at least v2.0 to extract, compressed size: 70, uncompressed size: 20000, name: f0b53b2da041fca49ef0b9839060b345
+547212        0x8598C         End of Zip archive
+
+An interesting file called 865c0c0b4ab0e063e5caa3387c1a8741 has a WAV header.
+
+The contents of the other files are very similar, also the file names look like hex.
+
+Trying to decode from hex wasn't fruitful, but it bore a striking resemblance to MD5.
+
+Using crackstation's wordlists on the file names revealed roman numerals.
+
+Presumably there was an order to the files, with 865c0c... being first on the list.
+
+$ cat 865* 7e9* 363* f0b* 9e3* 35b* 44b* b77* 799* > output.wav
+
+After opening output.wav with VLC it was obviously morse encoded.
+
+.--. .... . .. -.- -.-- --- ... translates to PHEIKYOS
+
+ZD2018{PHEIKYOS}

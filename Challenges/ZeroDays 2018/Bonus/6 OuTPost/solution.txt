@@ -1,0 +1,31 @@
+
+There are 2 streams of numbers given, one as text and another in a sound file.
+
+66475 19274 92028 78494 24146 68542 17507 39398 32348 59378 70636" # MP3
+92083 41866 05027 32206 36769 12418 56909 16718 63762 61762 33471" # Given
+
+The capitalised letters in the challenge's title hinted at One Time Pads.
+
+The description of the challenge also talks about a checkerboard.
+
+After some Googling I come across numeric OTPs and Straddling checkerboards.
+
+Decrypting the message amounts to laying out the checkerboard and working the OTP magic.
+
+Note: my initial checkerboard was laid out incorrectly until I got outside help... lol
+
+So first I added each digit of both streams and subtracted 10 if a result was over 10.
+
+The checkerboard helped in pairing together special numbers, in this case 0 and 5.
+
+Everything else was a matter of simple picking of letters from the checkerboard.
+
+The result I got was: "WOW FLAG ISHKHAL DROIO IS  Z R R A"
+
+From there deducing the flag was easy enough, I recognised Khal Drogo and ZRRA == 1337.
+
+I scripted the whole thing because I was too lazy to get out a pen and paper.
+
+Or because I love Python... probably both :P
+
+ZD2018{Khal Drogo is 1337}

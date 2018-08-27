@@ -1,0 +1,20 @@
+
+The URL given is http://challs.zerodays.events/securesw/
+
+After spending an eternity trying to reverse the JS, I spotted an HTML comment.
+
+<!--Protected by HTML Password Lock, MTop Software Inc.-->
+
+Alright, let's check their website out: http://www.mtopsoft.com/htmllock/faqbox.htm
+
+More Googling came up with a CTF writeup: https://innobyte.com/blog/ctf-write-up-web-400-2
+
+Apparently this mechanism keeps the original HTML file with an extension .PreLock
+
+So let's see if /index.html.PreLock exists on our CTF server.
+
+http://challs.zerodays.events/securesw/index.html.PreLock
+
+It worked, the file can be opened in a browser and contains the flag!
+
+ZD2018{VerySecureSoftwareNOT!}
