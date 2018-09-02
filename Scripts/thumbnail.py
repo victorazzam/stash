@@ -3,20 +3,19 @@
 import urllib3, readline
 from sys import argv, exit
 
-def thumb(codes):
+def thumb():
 	u = "https://i.ytimg.com/vi/{}/{}default.jpg"
-	for y, c in enumerate(codes):
-		for q in ("maxres", "sd", "hq", "mq", ""):
-			r = http.urlopen("GET", u.format(c, q))
-			if r.status in range(200, 300):
-				break
-			if not q:
-				return "Video https://www.youtube.com/watch?v=" + c + " does not exist!"
+	for q in ("maxres", "sd", "hq", "mq", ""):
+		r = http.urlopen("GET", u.format(code, q))
+		if r.status not in range(200, 300):
+			if q == "":
+				return f"Error: video https://www.youtube.com/watch?v={code} does not exist!"
+			continue
 		try:
-			r = http.urlopen("GET", u.format(c, q))
-			with open(c + ".jpg", "wb") as f:
+			r = http.urlopen("GET", u.format(code, q))
+			with open(code + ".jpg", "wb") as f:
 				f.write(r.data)
-			return "Done {}/{}".format(y+1, len(codes))
+			return "Done."
 		except Exception as e:
 			return "Error: " + str(e)
 
@@ -26,14 +25,23 @@ try:
 	if argv[1:]:
 		if not all(len(x) == 11 for x in argv[1:]):
 			exit("Usage: thumbnail [code ...]\nCode is the 11-character part after 'watch?v=' in the URL.")
-		exit(thumb(argv[1:]))
+		err = []
+		pos = 1
+		for code in argv[1:]:
+			msg = thumb()
+			if msg[0] == "E":
+				err.append(msg)
+			else:
+				print(f"\rDone {pos}/{len(argv[1:])}", end="")
+				pos += 1
+		exit("\n" * (len(err) > 0) + "\n".join(err))
 	print("Enter the video's 11-character code, the part after 'watch?v='")
 	while 1:
-		a = input(">> ").strip()
+		code = input(">> ").strip()
 		if len(a) != 11:
 			print("Video code must be 11 characters long!")
 		else:
-			print(thumb([a]))
+			print(thumb())
 except KeyboardInterrupt:
 	print()
 except Exception as e:
