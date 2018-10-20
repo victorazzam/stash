@@ -8,9 +8,8 @@ def thumb():
 	for q in ("maxres", "sd", "hq", "mq", ""):
 		r = http.urlopen("GET", u.format(code, q))
 		if r.status not in range(200, 300):
-			if q == "":
-				return f"Error: video https://www.youtube.com/watch?v={code} does not exist!"
-			continue
+			if q: continue
+			return f"Error: video https://www.youtube.com/watch?v={code} does not exist!"
 		try:
 			r = http.urlopen("GET", u.format(code, q))
 			with open(code + ".jpg", "wb") as f:
