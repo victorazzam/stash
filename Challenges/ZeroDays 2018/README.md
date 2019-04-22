@@ -1,1 +1,1 @@
-### Write-ups for ZeroDays 2018 held in April in Dublin, Ireland.
+### Write-ups for Zero Days CTF held in April 2018 in Dublin, Ireland.
