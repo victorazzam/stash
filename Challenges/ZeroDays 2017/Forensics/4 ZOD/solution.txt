@@ -1,0 +1,14 @@
+Downloads Xpdf tools from http://www.xpdfreader.com
+Use pdfdetach on zod.pdf to recursively extract embedded attachments
+
+The file zod.pdf has an attachment called 1000.pdf
+The file 1000.pdf has an attachment called 999.pdf
+...you get the point
+So now just write a script to automate this until flag.pdf
+PS: be nice to your HDD/SSD by deleting previous attachments as you go along
+
+#!/usr/bin/python
+import os
+for i in range(1,1000)[::-1]:
+    os.system("./pdfdetach -saveall %d.pdf" % i)
+    os.remove("%d.pdf" % i)

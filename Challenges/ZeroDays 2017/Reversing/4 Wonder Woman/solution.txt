@@ -1,0 +1,22 @@
+Opening the binary in GDB and disassembling some sections shows something interesting going on before the jump at 0x804859e so let's add a breakpoint there.
+
+(gdb) b *0x804859e
+
+Doing a test run with some random input, I noticed that the value checked at our breakpoint location is a printable character. I took a shot in the dark and guessed that it was maybe the password string.
+
+The value in question is stored in the stack at a 0x27 offset. The JE (Jump if Equal) instruction checks the state of ZF (the Zero Flag) from the previous CMP (Compare). If ZF was set then it means the values checked were equal, otherwise it continues with the next instruction.
+
+We simply need to patch this by constantly setting ZF ourselves whenever the breakpoint is hit. Let's define commands to execute when that happens.
+
+(gdb) commands
+set $eflags |= 1 << 6
+x/c $esp+0x27
+end
+
+Let's break this down. The $eflags variable contains a list of flags that are set during execution. The bitwise OR and 1 << 6 ensure that the 7th bit is set to 1 as it happens to be the value of ZF (64 in decimal). Then we print a single character from the stack at the correct offset.
+
+Now run the binary with "r" and use "c" to continue past all the SIGTRAP signals. How convenient! Use some random text when asked for the password, it doesn't matter at all.
+
+After entering something random, continue with "c" and you'll notice a new char being printed in the same spot on the screen. We're basically looping manually and printing the password letter by letter. At the end we just join the strings together and solve the challenge.
+
+Flag: ju5T_w4Rm1ng_UP!

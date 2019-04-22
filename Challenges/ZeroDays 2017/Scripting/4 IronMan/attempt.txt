@@ -1,0 +1,15 @@
+from subprocess import Popen, PIPE, STDOUT
+import time
+
+p = Popen("nc 54.246.249.189 2017".split(), stdout=sys.stdout, stdin=PIPE, stderr=PIPE)
+time.sleep(0.8)
+a = p.stdout.read()
+a = a.split("Calculate : \n\n")[1].split("\n")[0]
+solved = sum(map(int, a.split('+')))
+p.stdin.write(str(solved))
+p.stdin.flush()
+p.terminate()
+
+# For Reading
+# http://stackoverflow.com/questions/163542
+# http://stackoverflow.com/questions/17411966

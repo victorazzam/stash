@@ -1,0 +1,9 @@
+A bit of scripting reveals that power.txt has 1014000 pairs of round brackets. The values look like RGBA pixel colours. The data is presented as a Python list, which makes it perfect for use with the Pillow module.
+
+from PIL import Image
+with open("power.txt") as f:
+    img = Image.new("RGBA", (1014, 1000))
+    img.putdata(eval(f.read()))
+    img.save("out.png", "PNG")
+
+It might take a few seconds to complete. The output image out.png contains the flag.

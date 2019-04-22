@@ -1,0 +1,6 @@
+This basic piece of C code just asks for user input and checks it against a hard-coded pair of values.
+
+import struct
+print(struct.pack("I", 0x5f743047) + struct.pack("I", 0x6b31694d))
+
+Flag: G0t_Mi1k

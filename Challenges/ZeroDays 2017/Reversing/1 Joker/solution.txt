@@ -1,0 +1,5 @@
+There's a String declaration at the start of the main method. Any decompiler will find this.
+
+String str = "You didn't play fair";
+
+Flag: You didn't play fair

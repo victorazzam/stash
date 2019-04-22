@@ -1,0 +1,5 @@
+To the right, on the firearm behind Deadpool's head, there is some text:
+SGFzaHRhZyBkcmI2ZSlieQ
+
+$ echo SGFzaHRhZyBkcmI2ZSlieQ | base64 -D | hexdump -C
+00000000  48 61 73 68 74 61 67 20  64 72 62 36 65 29 62     |Hashtag drb6e)b|

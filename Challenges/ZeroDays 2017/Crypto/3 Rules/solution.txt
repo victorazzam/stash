@@ -1,0 +1,3 @@
+Use playfair.py and decrypt the cipher (without spaces) using the key: zerodays
+
+welldonetheflagisvillainsoftencomewithprettyfaces

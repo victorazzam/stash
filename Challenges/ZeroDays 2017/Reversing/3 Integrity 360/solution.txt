@@ -1,0 +1,5 @@
+Opening the binary in Hopper and turning on Pseudo Code mode reveals some fairly clean C source code. The function UnlockSecret contains the key which is passed into a format string inside a printf() call.
+
+Flag: 722721721
+
+PS: I may have patched the binary at some point.

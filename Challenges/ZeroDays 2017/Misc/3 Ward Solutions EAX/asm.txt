@@ -1,0 +1,22 @@
+MOV $19,%ebx
+MOV $31218,%ecx
+SUB %ecx,%ebx
+MOV $19211,%eax
+ADD %eax,%ebx
+CMP %eax,%ebx
+JL L2
+JMP L1
+L1:
+IMUL %eax,%ebx
+ADD %eax,%ebx
+MOV %ebx,%eax
+SUB %ecx,%eax
+JMP L3
+L2:
+IMUL %eax,%ebx
+SUB %eax,%ebx
+MOV %ebx,%eax
+ADD %ecx,%eax
+L3:
+INT3
+NOP

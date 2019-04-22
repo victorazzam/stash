@@ -1,0 +1,36 @@
+
+Solution by Victor Azzam
+------------------------
+
+STEP 1
+======
+Paste captchalogo.txt contents here: http://www.calormen.com/jslogo
+
+
+STEP 2
+======
+Watch the green turtle follow the drawing.
+Y is done first, sideways U is second.
+Then it shows everything else in an instant.
+Since the turtle stops at W - its the last letter.
+
+
+STEP 3
+======
+# SOME PYTHON YAY!!!1
+a = []
+
+for i in "TVXZ":
+    for j in "TVXZ":
+        for k in "TVXZ":
+            for l in "TVXZ":
+                a.append("YU%s%s%s%sW" % (i, j, k, l))
+
+a = [x for x in a if len("".join(list(set(x)))) == 7]
+print "\n".join(a)
+
+
+STEP 4
+======
+Luckily no need to try more than thrice ;)
+Answer: YUTXVZW

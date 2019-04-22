@@ -1,0 +1,14 @@
+https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange#Cryptographic_explanation
+
+>>> g = 10
+>>> p = 987
+>>> a = 15
+>>> b = 11
+>>> A = pow(g, a, p)
+>>> B = pow(g, b, p)
+>>> alice = pow(B, a, p)
+>>> bob = pow(A, b, p)
+>>> print(alice, bob)
+622 622
+
+So their shared secret is: 622

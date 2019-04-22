@@ -1,0 +1,11 @@
+The
+flag
+for
+this
+challenge
+is
+{
+use
+a
+salt
+}

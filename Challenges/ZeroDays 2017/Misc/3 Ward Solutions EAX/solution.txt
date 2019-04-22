@@ -1,0 +1,15 @@
+I formatted the given code as a nasm file and removed the horrid AT&T syntax. Then I tried to compile it and failed miserably. So here's the equivalent in Python:
+
+ebx = 19
+ecx = 31218
+ebx -= ecx
+eax = 19211
+ebx += eax
+print(ebx - eax) # -31199
+ebx *= eax
+ebx -= eax
+eax = ebx
+eax += ecx
+print(eax) # -230289461
+
+The answer is -230289461 although I have my doubts.

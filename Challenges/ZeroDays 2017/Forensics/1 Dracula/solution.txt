@@ -1,0 +1,3 @@
+strings dracula | grep -i flag
+
+Flag{We learn from failure, not from success!}
