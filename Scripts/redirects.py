@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
+"""
+Find out where a URL redirects to by following the HTTP "Location" response header.
+"""
 
 import requests
-from sys import *
+from sys import argv, exit
 
 try:
-	help = "Usage: long <URL>\nExample: long https://bit.ly/AbCdEf"
 	if not (argv[1:] + [""])[0].startswith(("http://", "https://")):
-		exit(help)
+		exit("Usage: long <URL>\nExample: long https://bit.ly/AbCdEf")
 	u = argv[1]
 	while 1:
 		r = requests.head(u)
@@ -14,7 +16,7 @@ try:
 			break
 		u = r.headers["Location"]
 		print(u)
-except KeyboardInterrupt:
-	exit()
+except (KeyboardInterrupt, EOFError):
+	print()
 except Exception:
-	exit("Error: the URL could not be retrieved")
+	exit("Error, the URL could not be retrieved.")
