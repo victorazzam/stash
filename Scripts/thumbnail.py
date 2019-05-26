@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Download thumbnails of YouTube videos in the highest available resolution.
+"""
 
 import urllib3, readline
 from sys import argv, exit
@@ -9,14 +12,14 @@ def thumb():
 		r = http.urlopen("GET", u.format(code, q))
 		if r.status not in range(200, 300):
 			if q: continue
-			return f"Error: video https://www.youtube.com/watch?v={code} does not exist!"
+			return f"Error, video https://www.youtube.com/watch?v={code} does not exist!"
 		try:
 			r = http.urlopen("GET", u.format(code, q))
 			with open(code + ".jpg", "wb") as f:
 				f.write(r.data)
 			return "Done."
 		except Exception as e:
-			return "Error: " + str(e)
+			return "Error, " + str(e)
 
 try:
 	http = urllib3.PoolManager(10)
@@ -38,10 +41,10 @@ try:
 	while 1:
 		code = input(">> ").strip()
 		if len(a) != 11:
-			print("Video code must be 11 characters long!")
+			print("Video code must be 11 characters long.")
 		else:
 			print(thumb())
-except KeyboardInterrupt:
+except (KeyboardInterrupt, EOFError):
 	print()
 except Exception as e:
-	exit("Error: " + str(e))
+	exit("Error, " + str(e))
