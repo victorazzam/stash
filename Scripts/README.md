@@ -1,5 +1,8 @@
 # Scripts
 
+### incogsave.py (macOS only)
+Display the URL of all current Google Chrome tabs, including any in incognito mode.
+
 ### redirects.py
 Find out where a URL redirects to by following the HTTP "Location" response header.
 
@@ -10,4 +13,4 @@ Download thumbnails of YouTube videos in the highest available resolution.
 Type out the contents of a file by simulating the necessary keyboard presses.
 
 ### unpack.py
-Copy files in a nested directory tree into a single directory.
+Copy files from a nested directory tree into a single directory.
