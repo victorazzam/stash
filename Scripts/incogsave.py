@@ -2,18 +2,24 @@
 
 import os
 
-try:
-    if "Chrome.app" not in os.popen("ps -ax").read():
-        exit("Google Chrome is not running.")
-    cmd = "osascript -e 'tell application \"Google Chrome\" to get URL of tab {} of window {}' 2>&1"
+def tabs(app):
     for w in range(1, 21):
         for t in range(1, 101):
-            out = os.popen(cmd.format(t, w)).read().strip()
-            if "Can’t get tab" in out:
+            out = os.popen(cmd.format(app, t, w)).read().strip()
+            if "Can't get tab" in out:
                 break
-            if "Can’t get window" in out:
-                exit()
+            if "Can't get window" in out or "execution error:" in out:
+                return
             if out != "chrome://newtab/":
                 print(out.strip())
+
+try:
+    cmd = "osascript -e 'tell application \"{}\" to get URL of tab {} of window {}' 2>&1"
+    ps = os.popen("ps -ax").read()
+    for app in ("Google Chrome", "Chromium"):
+        if f"{app}.app" not in ps:
+            print(f"{app} is not running.")
+        else:
+            tabs(app)
 except (KeyboardInterrupt, EOFError):
     print()
