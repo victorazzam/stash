@@ -3,6 +3,9 @@
 ### incogsave.py (macOS only)
 Display the URL of all current Google Chrome tabs, including any in incognito mode.
 
+### pdfrip.py
+Extract specific pages from PDF files.
+
 ### redirects.py
 Find out where a URL redirects to by following the HTTP "Location" response header.
 
