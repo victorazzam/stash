@@ -1,5 +1,8 @@
 # Scripts
 
+### dns.py (macOS only)
+Change, save and restore DNS servers from the command line.
+
 ### incogsave.py (macOS only)
 Display the URL of all current Google Chrome tabs, including any in incognito mode.
 
