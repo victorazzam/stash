@@ -1,5 +1,8 @@
 # Scripts
 
+### ctfd.py
+Download challenges and organise them into folders for any CTF that uses the [CTFd](https://github.com/ctfd/ctfd) platform.
+
 ### dns.py (macOS only)
 Change, save and restore DNS servers from the command line.
 
