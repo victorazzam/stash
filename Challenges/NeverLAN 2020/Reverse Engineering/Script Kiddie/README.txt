@@ -1,0 +1,1 @@
+It looks like a script kiddie was trying to build a crypto locker. See if you can get the database back?

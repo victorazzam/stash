@@ -1,0 +1,21 @@
+Method 1
+--------
+A hexdump should suffice, check the screenshot.
+
+Method 2
+--------
+Disassembling the file reveals a repeating sequence at the very beginning with what looks to be ASCII characters.
+
+$ objdump -D -Mintel Adobe_Employee_Payroll.exe
+
+As shown in the screenshot, 0x2 is added to the al register, then the stack is popped into the ds (data segment) register, and an ASCII value can be seen immediately after.
+
+The instructions are "04 02 1f XX" where XX is the hex representation of the ASCII values in question. Extract them to get the flag.
+
+Method 3
+--------
+Use the suggested dotPeek by JetBrains to decompile the program.
+
+Find that "admin" is the username and that this base64 string is the password: bmV2ZXJfZ29ubmFfZ2l2ZV95b3VfdXAh
+
+For those curious, the password decodes to: never_gonna_give_you_up!

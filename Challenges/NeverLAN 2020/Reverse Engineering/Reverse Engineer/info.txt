@@ -1,0 +1,8 @@
+As shown in the screenshot, the function print() is moving 20 ASCII values.
+
+When disassembled, the instruction for each printed character is:
+  11db:   c6 00 77     mov   BYTE PTR [eax], 0x77
+
+Searching for all the "mov [eax],0x??" or "c6 00" yields all the right ones, plus a null byte (0x00) at the end and a junk value (0x63) at the start.
+
+Filtering those out, it's only a matter of basic shell manoeuvring to get the values next to each other and then hex decode them.

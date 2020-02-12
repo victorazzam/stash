@@ -1,0 +1,5 @@
+Go to https://live.neverlanctf.com and click on Track 2.
+
+Open it in YouTube by clicking on the video title.
+
+Sort comments by new and search for the flag.
