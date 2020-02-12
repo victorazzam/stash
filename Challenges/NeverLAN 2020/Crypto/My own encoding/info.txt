@@ -1,0 +1,7 @@
+There are 25 mini-squares or dots in each square, which means 25 different possibilities for one dot to be filled in.
+
+One of them is completely blank, which adds a 26th state. The english alphabet has 26 letters int it, so this seems like a perfect match.
+
+Assume we start at zero with A being an empty square.
+
+Top left is B and so on, moving row by row, left to right, and ending with Z at the bottom right.

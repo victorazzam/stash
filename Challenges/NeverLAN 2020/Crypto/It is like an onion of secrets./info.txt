@@ -1,0 +1,15 @@
+$ zsteg Much_Confused.png
+  b1,r,lsb,xy         .. text: ":rS3qrxVC"
+  b1,rgb,lsb,xy       .. text: "Q214emNIWWdkM2RoZENCcmJDQnliR3AyZW1aamFXZG5kbTVqYkhwMkNteHpjSFlnZDNkaGRDQnJiQ0J5YkdwMmVtWmphV2RuZG01amJIcDJDbXh6Y0hZZ2QzZGhkQ0JyYkNCeWJHcDJlbVpqYVdkbmRtNWpiSHAyQ214emNIWWdkM2RoZENCcmJDQnliR3AyZW1aamFXZG5kbTVqYkhwMkNteHpjSFlnZDNkaGRDQnJiQ0J5YkdwMmVtWmphV2Ru"
+  b1,abgr,msb,xy      .. file: PGP	Secret Key -
+  b2,rgb,lsb,xy       .. text: "6Q:|2I;="
+  b2,rgba,lsb,xy      .. text: ";#3wcg73"
+  b4,r,lsb,xy         .. text: "\#$fR%ggQ"
+  b4,g,lsb,xy         .. text: "$D#DWfgTDTTUWff4Vvg"
+  b4,b,lsb,xy         .. text: "$Fwv5Fgu"
+
+Decode the big blob of base64 twice to find some repeating text:
+  lspv wwat kl rljvzfciggvnclzv
+
+Trying common ciphers, the correct one ends up being Vigenère with the key:
+  neverlanctf
