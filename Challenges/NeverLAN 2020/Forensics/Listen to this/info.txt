@@ -1,0 +1,17 @@
+After fiddling around with the spectrogram view in Audacity for a long while, it becomes apparent that the left channel has no morse code, while the right one does.
+
+Searching online reveals a tool that can help extract the differences between them.
+
+$ sox HiddenAudio.mp3 leftchannel.wav remix 1
+$ sox HiddenAudio.mp3 rightchannel.wav remix 2
+$ sox -m -v 1 leftchannel.wav -v -1 rightchannel.wav sound-difference.wav
+
+A special thanks to:
+ • https://askubuntu.com/a/771233
+ • https://sound.stackexchange.com/a/40226
+
+Viewing the result in Audacity again shows a much clearer view of the morse code.
+
+..-. .-.. .- --. -.. .. - ... .- -. -.. -.. .- .... ... ..-. --- .-. .-.. .. ..-. .
+
+FLAGDITSANDDAHSFORLIFE

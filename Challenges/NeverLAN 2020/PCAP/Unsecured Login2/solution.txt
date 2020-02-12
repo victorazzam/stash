@@ -1,0 +1,1 @@
+flag{ensure_https_is_always_used}

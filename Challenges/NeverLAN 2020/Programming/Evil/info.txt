@@ -1,0 +1,7 @@
+Follow log.txt for context.
+
+After logging in and reading the intel.txt file the obvious step was to do a brute force against evil's server.
+
+Medusa was already installed, and generating pins could be done with crunch or python. Password: 0024
+
+Log into evil@victim on port 22 and find a c3RvbmVjb2xk.zip file present. The name looks like base64. Decode it and use as password to open the zip and read the flag.

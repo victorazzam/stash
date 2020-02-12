@@ -1,0 +1,1 @@
+hashcat -a 3 -m 1800 -1 '?l?u?d' hashes.txt '?1?1?1?1'

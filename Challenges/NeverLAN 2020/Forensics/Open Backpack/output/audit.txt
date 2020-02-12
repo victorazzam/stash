@@ -1,0 +1,25 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Sat Feb  8 16:37:19 2020
+Invocation: foremost openbackpack.jpg 
+Output directory: /Users/Vicky/Desktop/CTF/NeverLAN 2020/Forensics/Open Backpack/output
+Configuration file: /usr/local/etc/foremost.conf
+------------------------------------------------------------------
+File: openbackpack.jpg
+Start: Sat Feb  8 16:37:19 2020
+Length: Unknown
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00000000.jpg 	     136 KB 	          0 	 
+1:	00000272.zip 	      15 KB 	     139267 	 
+Finish: Sat Feb  8 16:37:19 2020
+
+2 FILES EXTRACTED
+	
+jpg:= 1
+zip:= 1
+------------------------------------------------------------------
+
+Foremost finished at Sat Feb  8 16:37:19 2020
