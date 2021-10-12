@@ -2,8 +2,8 @@
 
 import os, sys, json, time, shutil, requests, hashlib, traceback
 
-fas = lambda f: "".join(map(chr, open(f, "rb").read()))
 fab = lambda x: open(x, "rb").read()
+fas = lambda f: "".join(map(chr, fab(f)))
 hash = lambda x: hashlib.sha256(x if type(x) == bytes else x.encode()).hexdigest()
 
 def dump(data, n=None):
@@ -17,10 +17,6 @@ def dump(data, n=None):
 			break
 
 try:
-	s = requests.Session()
-	s.cookies.set("session", sys.argv[2])
-	s.headers["User-Agent"] = "Mozilla/5.0"
-
 	DEBUG = "--debug" in sys.argv
 	watch = ([int(x[8:]) for x in sys.argv if x[:8] == "--watch=" and x[8:].isdigit() and int(x[8:]) > 59] + [0])[0]
 	host = "/".join(sys.argv[1].split("/", 3)[:3])
@@ -35,7 +31,13 @@ try:
 			else:
 				save = dir
 	save.rstrip("/")
+	if not os.path.isdir(save):
+		os.makedirs(save)
 	storage = f"{save}/challenges.json"
+
+	s = requests.Session()
+	s.cookies.set("session", sys.argv[2])
+	s.headers["User-Agent"] = "Mozilla/5.0"
 
 	for count in range(1000000 * watch + 1):
 		try:
