@@ -4,6 +4,7 @@ import os, sys, json, time, shutil, requests, hashlib, traceback
 
 fab = lambda x: open(x, "rb").read()
 fas = lambda f: "".join(map(chr, fab(f)))
+safe = lambda x: "".join(i for i in x if i.isalnum() or i in " /-_.,()$")
 hash = lambda x: hashlib.sha256(x if type(x) == bytes else x.encode()).hexdigest()
 
 def dump(data, n=None):
@@ -33,7 +34,7 @@ try:
 	save.rstrip("/")
 	if not os.path.isdir(save):
 		os.makedirs(save)
-	storage = f"{save}/challenges.json"
+	storage = safe(f"{save}/challenges.json")
 
 	s = requests.Session()
 	s.cookies.set("session", sys.argv[2])
@@ -61,7 +62,7 @@ try:
 					break
 				chall.pop("type")
 				locals().update(chall) # category name description files hints
-				desc, path = description.replace("\r", "").strip(), f"{save}/{category.replace('/', '-').strip()}/{name.replace('/', '-').strip()}"
+				desc, path = description.replace("\r", "").strip(), safe(f"{save}/{category.replace('/', '-').strip()}/{name.replace('/', '-').strip()}")
 				for y, i in enumerate(hints):
 					if i["cost"] == 0:
 						try:
@@ -83,7 +84,7 @@ try:
 				else:
 					continue
 				try:
-					os.makedirs(path)
+					os.makedirs(safe(path), exist_ok=True)
 				except FileExistsError:
 					pass
 				with open(README, "wb") as f:
