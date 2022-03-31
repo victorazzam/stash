@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-import os, sys, json, time, shutil, requests, hashlib, traceback
+import os, sys, json, time, shutil, urllib3, requests, hashlib, traceback
+
+urllib3.disable_warnings(category=urllib3.exceptions.InsecureRequestWarning)
 
 fab = lambda x: open(x, "rb").read()
 fas = lambda f: "".join(map(chr, fab(f)))
@@ -9,17 +11,14 @@ hash = lambda x: hashlib.sha256(x if type(x) == bytes else x.encode()).hexdigest
 
 def dump(data, n=None):
 	print("\nSHA256:", hash(data))
-	for i in range(0, len(data), 16):
-		line = hex(i)[2:].zfill(8)
-		hexed = " ".join(hex(ord(x))[2:].zfill(2) for x in data[i:i+16])
-		rep = "".join(x if ord(x) in range(32, 127) else "." for x in data[i:i+16])
-		print(f"{line}  {hexed[:23]:23}  {hexed[24:]:23}  |{rep:16}|")
-		if i == n:
-			break
+	for i in range(0, n or len(data), 16):
+		hexed = " ".join(f"{ord(x):02x}" for x in data[i:i+16])
+		rep = "".join((".", x)[31 < ord(x) < 127] for x in data[i:i+16])
+		print(f"{i:08x}  {hexed[:23]:23}  {hexed[24:]:23}  |{rep:16}|")
 
 try:
 	DEBUG = "--debug" in sys.argv
-	watch = ([int(x[8:]) for x in sys.argv if x[:8] == "--watch=" and x[8:].isdigit() and int(x[8:]) > 59] + [0])[0]
+	watch = ([0] + [int(x[8:]) for x in sys.argv if x[:8] == "--watch=" and x[8:].isdigit() and int(x[8:]) > 59])[-1]
 	host = "/".join(sys.argv[1].split("/", 3)[:3])
 	assert host.startswith(("http://", "https://"))
 
@@ -37,6 +36,7 @@ try:
 	storage = safe(f"{save}/challenges.json")
 
 	s = requests.Session()
+	s.verify = False
 	s.cookies.set("session", sys.argv[2])
 	s.headers["User-Agent"] = "Mozilla/5.0"
 
