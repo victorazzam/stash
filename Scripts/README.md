@@ -9,6 +9,9 @@ Change, save and restore DNS servers from the command line.
 ### incogsave.py (macOS only)
 Display the URL of all current Google Chrome tabs, including any in incognito mode.
 
+### md5apr1.py
+Convenient script for generating htpasswd entries.
+
 ### pdfrip.py
 Extract specific pages from PDF files.
 
