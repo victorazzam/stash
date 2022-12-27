@@ -4,7 +4,10 @@
 Download challenges and organise them into folders for any CTF that uses the [CTFd](https://github.com/ctfd/ctfd) platform.
 
 ### dns.py (macOS only)
-Change, save and restore DNS servers from the command line.
+Change, save, and restore DNS servers from the command line.
+
+### imgstrip.py
+Remove unnecessary data from images to save space without sacrificing quality.
 
 ### incogsave.py (macOS only)
 Display the URL of all current Google Chrome tabs, including any in incognito mode.
