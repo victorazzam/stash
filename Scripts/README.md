@@ -15,6 +15,9 @@ Display the URL of all current Google Chrome tabs, including any in incognito mo
 ### md5apr1.py
 Convenient script for generating htpasswd entries.
 
+### modsec-nginx-update.sh
+Update the ModSecurity WAF Nginx module.
+
 ### pdfrip.py
 Extract specific pages from PDF files.
 
