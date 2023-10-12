@@ -6,6 +6,9 @@ Download challenges and organise them into folders for any CTF that uses the [CT
 ### dns.py (macOS only)
 Change, save, and restore DNS servers from the command line.
 
+### domainer.py
+First-Aid kit for domains – enumerate subdomains, query DNS records, validate HTTPS certificates, check web server availability on ports 80 and 443 (including the presence of redirects).
+
 ### imgstrip.py
 Remove unnecessary data from images to save space without sacrificing quality.
 
